@@ -1,0 +1,2 @@
+# DITest
+Dependency injection пример

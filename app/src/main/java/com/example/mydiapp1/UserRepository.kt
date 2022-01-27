@@ -2,16 +2,30 @@ package com.example.mydiapp1
 
 import android.content.SharedPreferences
 
-class UserRepository(sp: SharedPreferences) {
-    private val sharedPreferences: SharedPreferences = sp
+interface UserRepositoryIntf {
 
-    fun getUser(): User {
-        // что-то делаем....
-        return User()
+    fun getUser(): User
+    fun saveUser(user: User)
+}
+
+class UserRepository (private var sharedPreferences: SharedPreferences): UserRepositoryIntf {
+
+    private val KEY_NAME = "KEY_NAME"
+    private val KEY_SURNAME = "KEY_SURNAME"
+
+    override fun getUser(): User {
+
+        return User(
+            sharedPreferences.getString(KEY_NAME, "")!!,
+            sharedPreferences.getString(KEY_SURNAME, "")!!
+        )
+
     }
 
-    fun saveUser(user: User) {
-        // что-то делаем....
+    override fun saveUser(user: User) {
+        sharedPreferences.edit()
+            .putString(KEY_NAME, user.getName())
+            .putString(KEY_SURNAME, user.getSurname())
+            .apply()
     }
-
 }

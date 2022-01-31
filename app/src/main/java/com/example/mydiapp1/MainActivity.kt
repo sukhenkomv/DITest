@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-//    @Inject
+    @Inject
     lateinit var userRepository: UserRepository
 
     lateinit var nameEdit: EditText
@@ -35,8 +35,8 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        userRepository = UserRepository(getSharedPreferences("app.prefs", MODE_PRIVATE))
-//        Toothpick.inject(this, scope);
+        val appScope = Toothpick.openScope("APP")
+        Toothpick.inject(this, appScope)
 
         if (savedInstanceState == null) {
             loadUser()

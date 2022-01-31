@@ -33,19 +33,9 @@ android {
 
 dependencies {
 
-    // ядро библиотеки
     implementation 'com.github.stephanenicolas.toothpick:toothpick-runtime:3.1.0'
-    // плюшки для Android
     implementation 'com.github.stephanenicolas.toothpick:smoothie-androidx:3.1.0'
-    // процессор аннотаций для генерации кода
     annotationProcessor 'com.github.stephanenicolas.toothpick:toothpick-compiler:3.1.0'
-
-//    implementation 'com.github.stephanenicolas.toothpick:ktp:3.x'
-//    kapt 'com.github.stephanenicolas.toothpick:toothpick-compiler:3.x'
-//
-//    //highly recommended
-//    testImplementation 'com.github.stephanenicolas.toothpick:toothpick-testing-junit5:3.x'
-//    testImplementation 'mockito or easymock'
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'

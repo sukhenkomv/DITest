@@ -1,14 +1,15 @@
 package com.example.mydiapp1
 
 import android.content.SharedPreferences
+import javax.inject.Inject
 
 interface UserRepositoryIntf {
-
     fun getUser(): User
     fun saveUser(user: User)
 }
 
-class UserRepository (private var sharedPreferences: SharedPreferences): UserRepositoryIntf {
+class UserRepository @Inject constructor(private var sharedPreferences: SharedPreferences) :
+    UserRepositoryIntf {
 
     private val KEY_NAME = "KEY_NAME"
     private val KEY_SURNAME = "KEY_SURNAME"

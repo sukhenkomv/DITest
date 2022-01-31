@@ -8,7 +8,7 @@ class App: Application() {
     override fun onCreate() {
         super.onCreate()
 
-//        val appScope = Toothpick.openScope("APP")
-//        appScope.installModules(RepositoryModule(applicationContext))
+        val appScope = Toothpick.openScope("APP")
+        appScope.installModules(RepositoryModule(applicationContext))
     }
 }

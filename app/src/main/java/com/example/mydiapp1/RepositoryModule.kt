@@ -8,9 +8,8 @@ import toothpick.config.Module
 class RepositoryModule(context: Context) : Module() {
 
     init {
-        val sp: SharedPreferences = context.getSharedPreferences("app.prefs", MODE_PRIVATE)
-        bind(SharedPreferences::class.java).toInstance(sp)
-
-        bind(UserRepositoryIntf::class.java).to(UserRepository::class.java).singleton()
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences("app.prefs", MODE_PRIVATE)
+        bind(SharedPreferences::class.java).toInstance(sharedPreferences)
+        bind(UserRepositoryIntf::class.java).to(UserRepository::class.java)
     }
 }

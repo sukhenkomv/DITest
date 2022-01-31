@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadUser() {
-        showUser(userRepository.getUser())
+         showUser(userRepository.getUser())
     }
 
     private fun showUser(user: User) {
